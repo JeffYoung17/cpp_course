@@ -1,3 +1,10 @@
+/*
+ * 类模板：存数据，取数据
+ * 数据可以是基本类型的int，double，也可以是自定义的结构体，类
+ * 当使用Store<int> s1, s2;编译器会把模板的类型参数换成int
+ * 当使用Store<Student> s3;编译器会把模板的类型参数换成自定义的结构体Student
+**/
+
 #include <iostream>
 #include <cstdlib>
 
