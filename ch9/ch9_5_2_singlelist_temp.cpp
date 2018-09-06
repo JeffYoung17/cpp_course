@@ -1,5 +1,6 @@
 /*
- * 实现一个简单的结点的类模板；
+ * 实现一个简单的单链表的类模板；
+ * 暂时链表还没实现，因为太长了。。。
 **/
 #include <iostream>
 #include <cassert>
@@ -20,6 +21,18 @@ public:
     Node<T>* deleteAfter();
     // 返回当前结点的下一个结点的指针
     Node<T>* nextNode() const;
+};
+
+template <class T>
+class LinkedList {
+private:
+    Node<T>* front;
+    Node<T>* rear;
+    Node<T>* prevPtr;
+    Node<T>* currPtr;
+    int size;
+    int position;
+public:
 };
 
 int main(int argc, char** argv)
