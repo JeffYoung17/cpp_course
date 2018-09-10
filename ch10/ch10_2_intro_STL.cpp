@@ -1,5 +1,5 @@
 /*
- * 输入几个整数，存入向量容器，输出它们的相反数
+ * 输入几个整数, 存入向量容器, 输出它们的相反数
 **/
 #include <iostream>
 #include <vector>
@@ -18,10 +18,9 @@ int main( int argc, char** argv )
     {
         cin >> s[i];
     }
-    // transform算法
-    // s.begin和s.end是迭代器，表示了容器的起始和结尾
-    // 处理的结果依次送给输出流迭代器，处理一个容器中的元素，然后就送给这个迭代器
-    // 处理容器中元素的方法，是用函数对象negate
+    // transform算法, 参数包括vector容器的迭代器, 函数对象, 以及结果
+    // s.begin和s.end是迭代器, 表示了容器的起始和结尾, 起循环的作用;
+    // negate函数对象处理的结果送给transform函数的result参数, 这里送给输出流迭代器;
     transform( s.begin(), s.end(), ostream_iterator<int>(cout, " "),\
         negate<int>() );
     cout << endl;
