@@ -1,5 +1,6 @@
 /*
  * 顺序容器的接口的简单使用
+ * 按存放顺序打印容器内的所有元素
 **/
 #include <iostream>
 #include <iterator>
@@ -8,6 +9,8 @@
 
 using namespace std;
 
+// 输入参数 const char* msg:  
+// 输入参数 const T& s: 代表对模板类型的常引用
 template <class T>
 void printContainer( const char* msg, const T& s )
 {
