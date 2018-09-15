@@ -1,6 +1,7 @@
 /*
- * 列表容器的splice操作
- * 拼接操作
+ * 列表容器的splice拼接操作
+ * s1.splice(iter1, s2, iter2, iter3)
+ * 把s2容器的迭代器[iter2, iter3)指向的元素 剪切到 s1容器的iter1迭代器指向的元素之前
 **/
 #include <iostream>
 #include <algorithm>
@@ -22,6 +23,8 @@ int main( int argc, char** argv )
     list<string> s2(names2, names2 + 4);
 
     // 把s1的首迭代器指向的元素 放到 s2的尾部
+    // s1 -> { "Helen", "Lucky", "Susan" }
+    // s2 -> { "Bob", "David", "Levin", "Mike,  "Alice" }
     s2.splice(s2.end(), s1, s1.begin() );
     
     // iter1 是 s1的首迭代器
@@ -39,7 +42,7 @@ int main( int argc, char** argv )
     // iter3前进2个位置, 指向s2的第4个元素
     advance( iter3, 2 );
 
-    // 把s2的 iter2到iter3迭代器范围内指向的元素: 也就是第2个元素到第4个元素
+    // 把s2的 iter2到iter3迭代器范围内指向的元素: 也就是第2个元素到第4个元素(不包括第4个)
     // 放到s1的 iter1迭代器指向的元素之前: 也就是放到s1的第3个元素之前
     s1.splice( iter1, s2, iter2, iter3 );
 
