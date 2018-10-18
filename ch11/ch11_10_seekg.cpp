@@ -10,7 +10,7 @@ using namespace std;
 
 int main( int argc, char** argv )
 {
-    int values[] = {9, 1, 2, 4 ,3, 8};
+    int values[] = {1, 2, 0, 4 ,3, 8, 0};
     ofstream out( "./integer", ios_base::binary );
     out.write( reinterpret_cast<char *>(values), sizeof(values) );
     out.close();
