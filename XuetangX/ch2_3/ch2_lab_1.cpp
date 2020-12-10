@@ -12,7 +12,7 @@ int main(int argc, char** argv)
     }
 
     int count = 0;
-    int max,min = ptr[0];
+    int max = ptr[0], min = ptr[0];
     for(int i=0; i<num; i++) {
         count += ptr[i];
         if(ptr[i] > max) {
