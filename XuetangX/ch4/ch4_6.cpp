@@ -1,10 +1,9 @@
 /*
- * 初始化列表 声明的时候可以不写，定义的时候再写
+ * 初始化列表 声明的时候不写，定义的时候再写
  * 有参的构造函数
  * 默认构造函数
  * 委托构造函数
  * 组合类的初始化
- * 析构函数暂时删了，反正也不做什么事情
 **/
 #include <iostream>
 #include <cmath>
@@ -19,6 +18,9 @@ public:
     Point(int xx, int yy);
     Point();
     Point(const Point &p);
+    ~Point() {
+        cout << "Point destructor" << endl;
+    }
     int getX(void);
     int getY(void);
     void setX(int xx);
@@ -31,7 +33,7 @@ private:
     Point p1, p2;
 public:
     Line(Point xp1, Point xp2);
-    Line(); // not defined yet
+    Line();
     Line(const Line &ln);
     double getLen(void);
 };
@@ -39,20 +41,20 @@ public:
 int main(int argc, char** argv)
 {
     Point mp1(1,1), mp2(3,4);
-    Line mline1(mp1, mp2);
-    Line mline2 = mline1; // or Line mline2(mline1);
+    Line mline1(mp1, mp2); // 一共调用4次Point的复制构造函数
+    // Line mline2 = mline1; // 默认的=号重载函数
+    Line mline2(mline1); // 则调用Line的复制构造;
     cout << "the length of line1 is " << mline1.getLen() << endl;
     cout << "the length of line2 is " << mline2.getLen() << endl;
     return 0;
 }
 
-Point::Point(int xx, int yy):x(xx), y(yy)
+Point::Point(int xx, int yy) : x(xx), y(yy)
 {
-    x = xx;
-    y = yy;
     cout << "i am a constructor of Point!" << endl;
 }
-Point::Point():Point::Point(0, 0)
+
+Point::Point() : Point::Point(0, 0)
 {}
 
 Point::Point(const Point &p)
@@ -80,17 +82,17 @@ void Point::setY(int yy)
 }
 
 /*
- * 在线的有参构造函数中，传入两个点类的形参，用初始化列表的形式去初始化线的点类部件
+ * 在Line的有参构造函数中，传入两个点类的形参，用初始化列表的形式去初始化线的点类部件
 **/
-Line::Line(Point xp1, Point xp2):p1(xp1), p2(xp2)
+Line::Line(Point xp1, Point xp2) : p1(xp1), p2(xp2)
 {
     cout << "i am a constructor of Line" << endl;
     double delta_x = static_cast<double>(p1.getX() - p2.getX());
     double delta_y = static_cast<double>(p1.getY() - p2.getY());
-    len = sqrt(delta_x*delta_x + delta_y*delta_y);
+    len = std::sqrt(delta_x * delta_x + delta_y * delta_y);
 }
 
-Line::Line(const Line &ln):p1(ln.p1), p2(ln.p2), len(ln.len)
+Line::Line(const Line &ln) : p1(ln.p1), p2(ln.p2), len(ln.len)
 {
     cout << "i am a copy constructor of Line" << endl;
 }

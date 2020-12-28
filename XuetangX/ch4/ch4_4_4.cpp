@@ -35,7 +35,7 @@ Clock fun2(void)
 //    cout << &tmp << endl;
 //    return tmp; // 会生成一个临时对象返回给主调函数, 调用拷贝构造, 
     return Clock(8, 8, 8); // 这样的写法可以避免一次拷贝构造
-    // 然而g++默认是有返回值优化选项, -fno-elide-constructors可以关闭优化
+    // g++默认是有返回值优化选项, -fno-elide-constructors可以关闭优化,然而加了这个选项,上面一行也会调用拷贝构造
 }
 
 void show(const Clock &cl)
