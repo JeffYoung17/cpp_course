@@ -1,9 +1,9 @@
 /*
- * 初始化列表 声明的时候可以不写，定义的时候再写
+ * 初始化列表，定义的时候再写
  * 有参的构造函数
  * 默认构造函数
  * 委托构造函数
- * 析构函数派上了用场
+ * 析构函数
 **/
 #include <iostream>
 #include <cmath>
@@ -46,7 +46,7 @@ Point::Point(int xx, int yy):x(xx), y(yy)
 Point::Point():Point::Point(0, 0)
 {}
 
-Point::Point(const Point &p)
+Point::Point(const Point& p)
 {
     x = p.x;
     y = p.y;

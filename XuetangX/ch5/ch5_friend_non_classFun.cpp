@@ -1,5 +1,5 @@
 /*
- * 初始化列表，定义的时候再写
+ * 初始化列表
  * 有参的构造函数
  * 默认构造函数
  * 委托构造函数
@@ -26,7 +26,13 @@ public:
     void setY(int yy);
     static void showCount(void);
     // 静态函数成员, 区别在于是否知道通过哪个具体的对象进行调用, 一般用来处理静态数据成员
+    friend float distBetw2Pt(const Point& a, const Point& b);
 };
+
+float distBetw2Pt(const Point& a, const Point& b)
+{
+    return std::sqrt(std::pow(a.x - b.x, 2) + std::pow(a.y - b.y, 2));
+}
 
 int Point::count = 0; // 静态数据成员的定义和初始化
 
@@ -37,6 +43,8 @@ int main(int argc, char** argv)
     Point::showCount();
     Point mp2(mp1);
     Point::showCount();
+    Point mp3(2,2);
+    cout << "Dis is: " << distBetw2Pt(mp1, mp3) << endl;
     return 0;
 }
 
