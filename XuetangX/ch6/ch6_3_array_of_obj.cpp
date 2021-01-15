@@ -14,29 +14,28 @@ class Point{
 private:
     int x;
     int y;
-    static int count; // 静态数据成员的声明
+    static int count;
 public:
     Point(int xx, int yy);
     Point();
     ~Point();
     Point(const Point &p);
-    int getX(void);
-    int getY(void);
+    int getX(void) const;
+    int getY(void) const;
     void setX(int xx);
     void setY(int yy);
     static void showCount(void);
-    // 静态函数成员, 区别在于是否知道通过哪个具体的对象进行调用, 一般用来处理静态数据成员
 };
 
-int Point::count = 0; // 静态数据成员的定义和初始化
+int Point::count = 0;
 
 int main(int argc, char** argv)
 {
+    Point arr[2];
     Point::showCount();
-    Point mp1(1,1);
-    Point::showCount();
-    Point mp2(mp1);
-    Point::showCount();
+    cout << arr[0].getX() << endl;
+    arr[1].setY(1);
+    cout << arr[1].getY() << endl;
     return 0;
 }
 
@@ -45,7 +44,6 @@ Point::Point(int xx, int yy):x(xx), y(yy)
     count++;
     cout << "i am a constructor of Point!" << endl;
 }
-
 Point::Point():Point::Point(0, 0)
 {}
 
@@ -63,11 +61,11 @@ Point::~Point()
     cout << "i am a destructor of Point!" << endl;
 }
 
-int Point::getX(void)
+int Point::getX(void) const
 {
     return x;
 }
-int Point::getY(void)
+int Point::getY(void) const
 {
     return y;
 }
