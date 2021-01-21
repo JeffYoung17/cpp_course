@@ -1,3 +1,6 @@
+/**
+ * 数组作为函数的参数
+ */
 #include <iostream>
 
 using namespace std;
