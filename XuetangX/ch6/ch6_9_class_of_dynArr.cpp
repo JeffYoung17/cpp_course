@@ -1,7 +1,5 @@
 /*
- * 自己做的动态数组简单类
- * 返回值类型是 对象的引用
- * 关于move还不太清楚怎么用，后面再改进
+ * 动态数组类
 **/
 #include <iostream>
 #include <cassert>
@@ -73,6 +71,7 @@ DynPoint::~DynPoint()
     cout << "deleting!" << endl;
 }
 
+// 返回值类型是 对象的引用
 Point& DynPoint::element(int index)
 {
     assert(index >= 0 && index < arr_size);

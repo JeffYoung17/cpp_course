@@ -44,11 +44,11 @@ Point::Point():Point::Point(0,0,0)
 
 int Point::getX(void)
 {
-    cout << x << endl;
+    return x;
 }
 int Point::getY(void)
 {
-    cout << y << endl;
+    return y; 
 }
 void Point::setX(int xx)
 {
