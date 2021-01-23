@@ -1,8 +1,8 @@
 /*
- * 用到委托构造
  * 深层复制构造(初始化列表的形式)
+ * 移动构造, 返回临时对象的优化
  * 因为现在这个版本的编译器有RVO，所以返回值是对象的时候并不会在构建临时对象的时候调用复制构造函数
- * 因此这里移动构造函数派不上用场   
+ * -fno-elide-constructors: 关闭g++返回临时对象的优化
 **/
 
 #include <iostream>
@@ -32,13 +32,16 @@ int main(int argc, char** argv)
     return 0;
 }
 
-IntNum::IntNum(int x):ptr(new int(x))
+// new int(x)返回一个指针
+IntNum::IntNum(int x) : ptr(new int(x))
 {
     cout << "calling constructor" << endl;
 }
 
-IntNum::IntNum():IntNum::IntNum(0)
-{}
+IntNum::IntNum() : IntNum::IntNum(0)
+{
+    cout << "delegate constructor" << endl;
+}
 
 IntNum::~IntNum()
 {
@@ -51,7 +54,7 @@ IntNum::IntNum(const IntNum& obj):ptr( new int(*obj.ptr) )
     cout << "calling copy constructor" << endl;
 }
 
-IntNum::IntNum(IntNum&& obj):ptr(obj.ptr)
+IntNum::IntNum(IntNum&& obj) : ptr(obj.ptr)
 {
     // 看起来做了一次浅层复制,然后把obj的指针置为空指针，delete空指针不会报错
     obj.ptr = nullptr;

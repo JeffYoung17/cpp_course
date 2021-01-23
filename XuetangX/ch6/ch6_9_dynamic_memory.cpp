@@ -36,6 +36,12 @@ int main(int argc, char** argv)
     cout << p_pt->getX() << endl;
     p_pt->printCoor();
     delete p_pt;
+
+    // 为对象数组动态分配内存
+    Point* pArr = new Point[2];
+    pArr[0].printCoor();
+    (pArr + 1)->printCoor();
+    delete[] pArr;
     return 0;
 }
 

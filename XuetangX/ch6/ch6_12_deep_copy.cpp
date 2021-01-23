@@ -1,7 +1,5 @@
 /*
- * 自己做的动态数组简单类
- * 返回值类型是 对象的引用
- * 关于move还不太清楚怎么用，后面再改进
+ * 动态数组类
 **/
 #include <iostream>
 #include <cassert>
@@ -80,6 +78,7 @@ DynPoint::DynPoint(int s):arr_size(s)
 DynPoint::DynPoint():DynPoint::DynPoint(1)
 {}
 
+// 复制构造函数
 DynPoint::DynPoint(const DynPoint &p)
 {
     arr_size = p.arr_size;

@@ -3,7 +3,7 @@
 **/
 #include <iostream>
 #include <cassert>
-#include <utility>
+#include <stdlib.h>
 
 using namespace std;
 
@@ -15,13 +15,14 @@ public:
     Point(int xx, int yy);
     Point();
     ~Point();
+    void getXY(void);
     void setXY(int x_coor, int y_coor);
 };
 
 class DynPoint{
 private:
     int arr_size;
-    Point* arr_ptr; // 动态数组的首地址
+    Point *arr_ptr;
 public:
     DynPoint(int s);
     DynPoint();
@@ -33,8 +34,14 @@ int main(int argc, char** argv)
 {
     DynPoint dp(2);
     dp.element(0).setXY(1,2);
-    dp.element(2).setXY(2,3);
+    dp.element(1).setXY(2,3);
+    dp.element(0).getXY();
+    dp.element(1).getXY();
+    DynPoint dp_copy(dp);
+    dp_copy.element(0).getXY();
+    dp_copy.element(1).getXY();
     return 0;
+    // 程序结束的时候会出错, 多次析构同一块内存空间
 }
 
 Point::Point(int xx, int yy):x(xx), y(yy)
@@ -56,6 +63,11 @@ void Point::setXY(int x_coor, int y_coor)
     y = y_coor;
 }
 
+void Point::getXY(void)
+{
+    cout << "coor: X is " << x << " Y is " << y << endl;
+}
+
 DynPoint::DynPoint(int s):arr_size(s)
 {
     cout << "requesting!" << endl;
@@ -71,7 +83,6 @@ DynPoint::~DynPoint()
     cout << "deleting!" << endl;
 }
 
-// 返回值类型是 对象的引用
 Point& DynPoint::element(int index)
 {
     assert(index >= 0 && index < arr_size);
