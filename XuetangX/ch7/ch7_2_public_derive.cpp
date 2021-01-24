@@ -1,7 +1,7 @@
 /*
- * 有继承的情况下，写构造函数需要注意的点比较多；
- * 所以这个例子对基类和派生类都没有显式地定义构造函数；
- * 公有继承方式：派生类可以访问public和protected,派生类的实例化对象可以访问public
+ * 这个例子对基类和派生类都没有显式地定义构造函数；
+ * 公有继承：派生类可以访问public和protected, 且属性不变;
+ *      派生类的实例化对象可以访问public
 **/
 
 #include <iostream>
@@ -28,19 +28,20 @@ class Point {
         float x, y;
 };
 
+// Rectangle在Point基础上添加宽和高, 进行继承
 class Rectangle: public Point { 
-//派生类定义部分
+// 派生类定义部分
 public: 
-//新增公有函数成员
+    // 新增公有函数成员
     void initRectangle(float _x, float _y, float _w, float _h) {
-        initPoint(_x, _y);              //调用基类公有成员函数
+        initPoint(_x, _y);              // 调用基类public成员
         this->w = _w;
         this->h = _h;
     }
     float getH() const { return h; }
     float getW() const { return w; }
 private:    
-//新增私有数据成员
+    // 新增私有数据成员
     float w, h;
 };
 

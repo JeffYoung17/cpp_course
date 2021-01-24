@@ -23,6 +23,10 @@
 |ch6|[ch6_12_deep_copy.cpp](XuetangX/ch6/ch6_12_deep_copy.cpp)|深拷贝|  
 |ch6|[ch6_12_move_constuct.cpp](XuetangX/ch6/ch6_12_move_construct.cpp)|移动构造|  
 |ch6|[ch6_13_string.cpp](XuetangX/ch6/ch6_13_string.cpp)|字符串和string|  
+|ch7|[ch7_2_public_derive.cpp](XuetangX/ch7/ch7_2_public_derive.cpp)|公有继承|  
+|ch7|[ch7_2_private_derive.cpp](XuetangX/ch7/ch7_2_private_derive.cpp)|私有继承|  
+|ch7|[ch7_2_protected_derive.cpp](XuetangX/ch7/ch7_2_protected_derive.cpp)|保护继承|  
+|ch7|[ch7_2_multi_derive.cpp](XuetangX/ch7/ch7_2_multi_derive.cpp)|多继承|  
 
 ### Link
 0x01: [C++语言程序设计基础(自主模式)](http://www.xuetangx.com/courses/course-v1:TsinghuaX+00740043X_2015_T2+sp/about)  

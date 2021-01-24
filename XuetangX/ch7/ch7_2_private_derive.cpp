@@ -1,9 +1,7 @@
 /*
- * 有继承的情况下，写构造函数需要注意的点比较多；
- * 所以这个例子对基类和派生类都没有显式地定义构造函数；
- * 公有继承方式：派生类可以访问public和protected,派生类的实例化对象可以访问public
- * 私有继承方式：派生类可以访问public和protected,派生类的实例化对象不能访问任何基类的成员\
- * 所以只好在派生类中派生出新的一些成员函数，在这个例子是同名的成员。
+ * 这个例子对基类和派生类都没有显式地定义构造函数；
+ * 私有继承：派生类可以访问public和protected, 属性均变为private;
+ *      派生类的实例化对象不能访问任何基类的成员
 **/
 
 #include <iostream>
@@ -30,24 +28,25 @@ class Point {
         float x, y;
 };
 
-class Rectangle: private Point { 
-//派生类定义部分
+class Rectangle : private Point { 
+// 派生类定义部分
 public: 
-//新增公有函数成员
+// 新增公有函数成员
     void initRectangle(float _x, float _y, float _w, float _h) {
-        initPoint(_x, _y);              //调用基类公有成员函数
+        initPoint(_x, _y);              // 调用基类公有成员函数
         this->w = _w;
         this->h = _h;
     }
+    float getH() const { return h; }
+    float getW() const { return w; }
+    // 基类的公有接口不能通过派生类的对象访问, 因此实现新的move和getXY
     void move(float offX, float offY) {
         Point::move(offX, offY);
     }
     float getX() const { return Point::getX(); }
     float getY() const { return Point::getY(); }
-    float getH() const { return h; }
-    float getW() const { return w; }
 private:    
-//新增私有数据成员
+// 新增私有数据成员
     float w, h;
 };
 
