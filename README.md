@@ -27,6 +27,12 @@
 |ch7|[ch7_2_private_derive.cpp](XuetangX/ch7/ch7_2_private_derive.cpp)|私有继承|  
 |ch7|[ch7_2_protected_derive.cpp](XuetangX/ch7/ch7_2_protected_derive.cpp)|保护继承|  
 |ch7|[ch7_2_multi_derive.cpp](XuetangX/ch7/ch7_2_multi_derive.cpp)|多继承|  
+|ch7|[ch7_3_type_cast.cpp](XuetangX/ch7/ch7_3_type_cast.cpp)|基类和派生类的类型转换|  
+|ch7|[ch7_4_singleInherit_deriveConstructor.cpp](XuetangX/ch7/ch7_4_singleInherit_deriveConstructor.cpp)|单继承派生类构造函数|  
+|ch7|[ch7_4_multiInherit_deriveConstructor.cpp](XuetangX/ch7/ch7_4_multiInherit_deriveConstructor.cpp)|多继承派生类构造函数|  
+|ch7|[ch7_4_deriveDestructor.cpp](XuetangX/ch7/ch7_4_deriveDestructor.cpp)|派生类的析构函数|  
+|ch7|[ch7_5_visit_member_from_base.cpp](XuetangX/ch7/ch7_5_visit_member_from_base.cpp)|访问基类成员|  
+|ch7|[ch7_5_virtual_base_class.cpp](XuetangX/ch7/ch7_5_virtual_base_class.cpp)|虚继承|  
 
 ### Link
 0x01: [C++语言程序设计基础(自主模式)](http://www.xuetangx.com/courses/course-v1:TsinghuaX+00740043X_2015_T2+sp/about)  

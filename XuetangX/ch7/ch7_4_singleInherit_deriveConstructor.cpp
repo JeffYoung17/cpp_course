@@ -1,6 +1,6 @@
 /*
- * 当基类没有默认构造函数，那么派生类的构造函数中肯定要通过初始化列表的方法给基类传参数
- * 当基类有默认构造函数，那么派生类的构造函数可以不选择给基类传参数
+ * 基类没有默认构造函数，派生类的构造函数要通过初始化列表的方法给基类传参数
+ * 基类有默认构造函数，派生类的构造函数可以不选择给基类传参数
 **/
 #include <iostream>
 using namespace std;
@@ -18,7 +18,7 @@ private:
 class C: public B {
 public:
     C();
-    C(int j);
+    C(int i, int j);
     ~C();
     void print() const;
 private:
@@ -27,9 +27,10 @@ private:
 
 int main(int argc, char** argv)
 {
-    C obj(3);
+    C obj(1, 3);
     obj.print();
-
+    C default_obj;
+    default_obj.print();
     return 0;
 }
 
@@ -51,18 +52,17 @@ void B::print() const {
 C::C()
 {
     c=0;
-    cout << "C's default constructor" << endl;
+    cout << "C's default constructor called" << endl;
 }
 
-C::C(int j)
+C::C(int i, int j) : B(i), c(j)
 {
-    c = j;
-    cout << "C's constructor" << endl;
+    cout << "C's constructor called" << endl;
 }
 
 C::~C()
 {
-    cout << "C's destructor" << endl;
+    cout << "C's destructor called" << endl;
 }
 
 void C::print() const
