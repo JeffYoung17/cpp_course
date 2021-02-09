@@ -5,7 +5,7 @@
  * 私有继承：派生类可以访问public和protected, 属性均变为private;
  *      派生类的实例化对象不能访问任何基类的成员
  * 保护继承: 派生类可以访问public和protected, 属性均变为protected;
- *      派生类的实例化对象不能访问任何基类的成员, 即实现了代码重用,有实现了数据隐藏
+ *      派生类的实例化对象不能访问任何基类的成员, 即实现了代码重用,又实现了数据隐藏
 **/
 #include <iostream>
 using namespace std;
