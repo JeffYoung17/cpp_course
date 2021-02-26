@@ -33,6 +33,12 @@
 |ch7|[ch7_4_deriveDestructor.cpp](XuetangX/ch7/ch7_4_deriveDestructor.cpp)|派生类的析构函数|  
 |ch7|[ch7_5_visit_member_from_base.cpp](XuetangX/ch7/ch7_5_visit_member_from_base.cpp)|访问基类成员|  
 |ch7|[ch7_5_virtual_base_class.cpp](XuetangX/ch7/ch7_5_virtual_base_class.cpp)|虚继承|  
+|ch8|[ch8_1_mono_op.cpp](XuetangX/ch8/ch8_1_mono_op.cpp)|一元运算符的重载|  
+|ch8|[ch8_1_bino_op.cpp](XuetangX/ch8/ch8_1_bino_op.cpp)|二元运算符的重载|  
+|ch8|[ch8_1_nonObjFunc.cpp](XuetangX/ch8/ch8_1_nonObjFunc.cpp)|重载为非成员函数|  
+|ch8|[ch8_2_virtual_func.cpp](XuetangX/ch8/ch8_2_virtual_func.cpp)|虚函数|  
+|ch8|[ch8_2_virtual_destructor.cpp](XuetangX/ch8/ch8_2_virtual_destructor.cpp)|虚析构函数|  
+|ch8|[ch8_3_abstract_class.cpp](XuetangX/ch8/ch8_3_abstract_class.cpp)|抽象类| 
 
 ### Link
 0x01: [C++语言程序设计基础(自主模式)](http://www.xuetangx.com/courses/course-v1:TsinghuaX+00740043X_2015_T2+sp/about)  
