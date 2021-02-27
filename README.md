@@ -39,6 +39,8 @@
 |ch8|[ch8_2_virtual_func.cpp](XuetangX/ch8/ch8_2_virtual_func.cpp)|虚函数|  
 |ch8|[ch8_2_virtual_destructor.cpp](XuetangX/ch8/ch8_2_virtual_destructor.cpp)|虚析构函数|  
 |ch8|[ch8_3_abstract_class.cpp](XuetangX/ch8/ch8_3_abstract_class.cpp)|抽象类| 
+|ch8|[ch8_4_override.cpp](XuetangX/ch8/ch8_4_override.cpp)|override显示覆盖基类的成员函数| 
+|ch8|[ch8_4_final.cpp](XuetangX/ch8/ch8_4_final.cpp)|final不允许基类或基类成员函数被覆盖| 
 
 ### Link
 0x01: [C++语言程序设计基础(自主模式)](http://www.xuetangx.com/courses/course-v1:TsinghuaX+00740043X_2015_T2+sp/about)  
